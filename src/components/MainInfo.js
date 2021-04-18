@@ -4,16 +4,16 @@ class MainInfo extends Component {
     render() {
         const {name, lastName, phone, email, address, comments} = this.props.info
         return (
-            <div>
+            <div>                    <input name='name' type="text" placeholder='Name' 
+            value={name} onChange={this.props.update}/>
+            <input name='lastName' type="text" placeholder='Lastname' 
+            value={lastName} onChange={this.props.update}/>
                <div className='textArea'>
                    <textarea placeholder='Introduce Yourself' name='comments' 
                    value={comments} onChange={this.props.update}>
                    </textarea>
                </div>
-                   <input name='name' type="text" placeholder='Name' 
-                   value={name} onChange={this.props.update}/>
-                   <input name='lastName' type="text" placeholder='Lastname' 
-                   value={lastName} onChange={this.props.update}/>
+
                    <input name='phone' type="text" placeholder='Phone Number' 
                    value={phone} onChange={this.props.update}/>
                    <input name='email' type="text" placeholder='Email' 

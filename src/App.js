@@ -20,18 +20,19 @@ class App extends Component {
   }
   
   getPdf = (e) => {
-  const input = e.target.parentElement;
-
-  html2canvas(input, { 
-    scale: 2,  
+  const input = e.target.parentElement.nextElementSibling
+  console.log(e.target.parentElement.nextElementSibling)
+  //const btn = e.target
+  //btn.style.visibility = 'hidden'
+    html2canvas(input, { 
+    scrollY: -window.scrollY,  
     logging: true, 
-    width: input.offsetWidth, 
-    height: input.offsetHeight,
+    height: window.outerHeight + window.innerHeight,
+    windowHeight: window.outerHeight + window.innerHeight,
     useCORS: true 
 })
   .then((canvas) => {
     var context = canvas.getContext('2d');
-    context.mozImageSmoothingEnabled = false;
     context.webkitImageSmoothingEnabled = false;
     context.msImageSmoothingEnabled = false;
     context.imageSmoothingEnabled = false;
@@ -40,26 +41,12 @@ class App extends Component {
     const imgProps= pdf.getImageProperties(imgData);
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-   
     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
     pdf.save("download.pdf");
-    
+    //btn.style.visibility = 'visible'
   })
 }
-/*
-  getPdf = (e) => {
-    console.log(e.target.parentElement)
-  const input = e.target.parentElement;
-  html2canvas(input)
-  .then((canvas) => {
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF();
-    pdf.addImage(imgData, 'PNG', 0, 0);
-    pdf.save("download.pdf");
-    
-  })
-*/ 
+
 
 
   render(){
@@ -69,11 +56,14 @@ class App extends Component {
        <div className="editable">
          <h1>CV Builder</h1>
          <Form getData = {this.getData}/>
+         <button style={{margin: '1rem'}} name='final' onClick={this.getPdf}>PDF</button>
+
        </div>
        <div className="final">
         <h1>Curriculum Vitae</h1>
         <Cv dataForm={data}/>
-        <button name='final' onClick={this.getPdf}>PDF</button>
+        
+        
        </div>
     </div>
   );
@@ -81,3 +71,8 @@ class App extends Component {
 }
 
 export default App;
+
+/*
+<button style={{margin: '1rem'}} name='final' onClick={this.getPdf}>PDF</button>
+
+*/

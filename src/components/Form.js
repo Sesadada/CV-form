@@ -96,7 +96,7 @@ class Form extends Component {
         const addStyle = {
             borderRadius: '3px', 
             width: '40vw', 
-            backgroundColor:'#f990ba', 
+            backgroundColor:'rgb(171, 171, 230)', 
             border: 'none', 
             height: '2rem'
         }
@@ -151,7 +151,6 @@ class Form extends Component {
                    </textarea>
                </div>
 
-               <button className="submit" type='submit'>Submit</button>
             </form>
         )
     }
@@ -161,6 +160,7 @@ export default Form
 
 
 /*old
+               <button className="submit" type='submit'>Submit</button>
 
     handleJob = (e, id) => {
         e.preventDefault()

@@ -7,33 +7,43 @@ const Cv = (props) => {
         <main className="wrapper">
         <article className="container">
         <section className="grid-area image">
+         <div className={pic? null : "picStyle"}>
           <img className='cvImg' src={pic && pic} alt={pic && 'Your pic'}/>
+          <br/><br/>
+          {!pic && 'Your Pic'}
+          <br/>
+          {!pic && 'Here'}
+          </div> 
         </section>
         <section className='grid-area cvName'>
-        <h2 >{name} {lastName}</h2>
-        <h6 className={comments && 'cvComments'}>{comments}</h6>
+        <h2> {!name && 'Your name here'}{name} {lastName}</h2>
+        <h6 className={!comments? "emptyIntro":'cvComments'}>
+        {!comments && 'Your introduction here'}{comments}
+        </h6>
         </section>
 
-        <section className='grid-area cvMainInfo'>
+        <section className={!(phone||address||email)? "emptyInfo":'grid-area cvMainInfo'} >
+        {!(phone||address||email) && 'Your info here'}
            <h6 style={{marginBottom: '0.5rem', fontSize: '9px'}}>{address}</h6>
            <h6 style={{marginBottom: '0.5rem', fontSize: '9px'}}>{email}</h6>
             <h6>{phone}</h6>
             </section>
-        <section className="grid-area cvJobs">
+        <section className={!props.dataForm.jobs? "emptyJobs":"grid-area cvJobs"}>
         <p className='compTitle'>Experience</p>
             {
                 props.dataForm?.jobs && props.dataForm.jobs.map(
                     job => <CvJobs key={job.id} jobs={job}/>)
             }
         </section>
-        <section className="grid-area cvStudies">
+        <section className={!props.dataForm.education? "emptyStudies":"grid-area cvStudies"}>
         <p className='compTitle'>Education</p>
             {
                 props.dataForm?.education && props.dataForm.education.map(
                     study => <CvStudy key={study.id} studies={study}/>)
             }
         </section>
-        <section className="grid-area cvInterests">
+        <section className={!interests? "emptyInterests":"grid-area cvInterests"} >
+        {!interests && 'Your Interests here'}
         <p style={{marginBottom: '0.5rem', fontSize: '9px'}}>{interests}</p>
         </section>
         </article>
