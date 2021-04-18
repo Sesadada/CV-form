@@ -1,38 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
 .App {
+  width: 100vw;
+  height: 100vh;
+  background-color: pink;
+  display: flex;
+}
+
+h1 {
+  padding: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 250;
+}
+
+.editable {
+  background-color: rgb(245, 210, 245);
+  width: 50%;
+  max-height: 100vh;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.final {
+  background-color: rgb(224, 205, 243);
+  width: 210mm !important;
+  height: 290mm !important;
+  text-align: center;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+/* style for the builder */
+textArea {
+  width: 40vw;
+  border-radius: 3px;
+  border: 1px solid rgb(202, 200, 200);
+  margin-bottom: 1rem;
+}
+
+textArea::placeholder {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 3em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mainInfo,
+.jobs,
+.textArea,
+input {
+  margin: 0.5vw;
+}
+.mainInfo,
+.submit {
+  margin-bottom: 1rem;
+}
+.imgBtn,
+.jobs,
+.education {
+  margin-bottom: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+  width: 19.5vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* style for the CV */
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr 1fr;
+  grid-template-areas:
+    "cvName cvName"
+    "cvJobs image"
+    "cvJobs cvMainInfo"
+    "cvStudies cvInterests";
+}
+.wrapper {
+  padding: 0rem 1rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.App-link {
-  color: #61dafb;
+.cvName {
+  grid-area: cvName;
+}
+.cvComments {
+  width: 89%;
+  line-height: 1rem;
+  margin: 1rem 2rem 2rem 2rem;
+  border: 0.5px solid rgb(171, 171, 230);
+  padding: 0.8rem;
+  border-radius: 5px;
+  text-align: justify;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image {
+  grid-area: image;
+}
+
+.cvImg {
+  width: 60%;
+  border-radius: 50%;
+}
+
+.cvIntro {
+  grid-area: cvIntro;
+}
+.cvMainInfo {
+  grid-area: cvMainInfo;
+  margin-left: 2.9rem;
+  text-align: justify;
+  width: 60%;
+}
+.cvJobs {
+  grid-area: cvJobs;
+}
+.cvStudies {
+  grid-area: cvStudies;
+  margin-bottom: 2rem;
+}
+.cvInterests {
+  grid-area: cvInterests;
+  margin-top: 2.3rem;
+  margin-left: 2.9rem;
+  text-align: justify;
+  width: 60%;
+  line-height: 15px;
+}
+
+.compTitle {
+  text-align: left;
+  margin-left: 2rem;
+  font-family: serif;
+  font-size: 20px;
+}
+
+.firstLine {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.secondLine {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-top: 0.2rem;
+  font-size: 14px;
+}
+
+@media print {
+  /* remove any screen only styles, for example link underline */
+}
+
+@page {
+  padding: 0;
+  margin: 0cm;
+  size: A4 portrait;
 }
