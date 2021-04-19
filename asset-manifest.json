@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/CV-form/static/css/main.8f14eda7.chunk.css",
+    "main.js": "/CV-form/static/js/main.3ac0507e.chunk.js",
+    "main.js.map": "/CV-form/static/js/main.3ac0507e.chunk.js.map",
+    "runtime-main.js": "/CV-form/static/js/runtime-main.4e3382af.js",
+    "runtime-main.js.map": "/CV-form/static/js/runtime-main.4e3382af.js.map",
+    "static/js/2.9621c670.chunk.js": "/CV-form/static/js/2.9621c670.chunk.js",
+    "static/js/2.9621c670.chunk.js.map": "/CV-form/static/js/2.9621c670.chunk.js.map",
+    "static/js/3.422bc964.chunk.js": "/CV-form/static/js/3.422bc964.chunk.js",
+    "static/js/3.422bc964.chunk.js.map": "/CV-form/static/js/3.422bc964.chunk.js.map",
+    "static/js/4.be2edc5c.chunk.js": "/CV-form/static/js/4.be2edc5c.chunk.js",
+    "static/js/4.be2edc5c.chunk.js.map": "/CV-form/static/js/4.be2edc5c.chunk.js.map",
+    "index.html": "/CV-form/index.html",
+    "static/css/main.8f14eda7.chunk.css.map": "/CV-form/static/css/main.8f14eda7.chunk.css.map",
+    "static/js/2.9621c670.chunk.js.LICENSE.txt": "/CV-form/static/js/2.9621c670.chunk.js.LICENSE.txt",
+    "static/js/3.422bc964.chunk.js.LICENSE.txt": "/CV-form/static/js/3.422bc964.chunk.js.LICENSE.txt",
+    "static/js/4.be2edc5c.chunk.js.LICENSE.txt": "/CV-form/static/js/4.be2edc5c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4e3382af.js",
+    "static/js/3.422bc964.chunk.js",
+    "static/css/main.8f14eda7.chunk.css",
+    "static/js/main.3ac0507e.chunk.js"
+  ]
+}
