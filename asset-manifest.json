@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/CV-form/static/css/main.2355b8e1.chunk.css",
-    "main.js": "/CV-form/static/js/main.3ac0507e.chunk.js",
-    "main.js.map": "/CV-form/static/js/main.3ac0507e.chunk.js.map",
+    "main.js": "/CV-form/static/js/main.f2673efc.chunk.js",
+    "main.js.map": "/CV-form/static/js/main.f2673efc.chunk.js.map",
     "runtime-main.js": "/CV-form/static/js/runtime-main.4e3382af.js",
     "runtime-main.js.map": "/CV-form/static/js/runtime-main.4e3382af.js.map",
     "static/js/2.9621c670.chunk.js": "/CV-form/static/js/2.9621c670.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.4e3382af.js",
     "static/js/3.422bc964.chunk.js",
     "static/css/main.2355b8e1.chunk.css",
-    "static/js/main.3ac0507e.chunk.js"
+    "static/js/main.f2673efc.chunk.js"
   ]
 }
