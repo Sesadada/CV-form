@@ -21,9 +21,6 @@ class App extends Component {
   
   getPdf = (e) => {
   const input = e.target.parentElement.nextElementSibling
-  console.log(e.target.parentElement.nextElementSibling)
-  //const btn = e.target
-  //btn.style.visibility = 'hidden'
     html2canvas(input, { 
     scrollY: -window.scrollY,  
     logging: true, 
@@ -43,7 +40,6 @@ class App extends Component {
     const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
     pdf.save("download.pdf");
-    //btn.style.visibility = 'visible'
   })
 }
 
@@ -72,7 +68,4 @@ class App extends Component {
 
 export default App;
 
-/*
-<button style={{margin: '1rem'}} name='final' onClick={this.getPdf}>PDF</button>
 
-*/

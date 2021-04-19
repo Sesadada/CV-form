@@ -66,9 +66,4 @@ render() {
     }
 export default ImageUp
 
-/*
-    <button onClick={() => this.fileUploadHandler()}>Upload to CV</button>
-    <img src={this.state.newImage && this.state.newImage}  alt=""/>
-
-*/
 
