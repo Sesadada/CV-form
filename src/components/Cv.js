@@ -3,6 +3,19 @@ import CvStudy from './CvStudy'
 const Cv = (props) => {
     const {comments, name, lastName, address, phone, email, pic, interests} = props.dataForm
 
+    const classChecker = (w, empty, full) => {
+        if (!props.dataForm[w]) {
+          return empty
+        } else if(props.dataForm[w]){
+           let checkEmpty = props.dataForm[w][0]
+           const ar = Object.getOwnPropertyNames(checkEmpty)
+            if(!(checkEmpty[ar[1]] ||checkEmpty[ar[2]] ||checkEmpty[ar[3]] ||checkEmpty[ar[4]])) {
+                return empty
+            } 
+                return full
+        }
+    }
+
     return (
         <main className="wrapper">
         <article className="container">
@@ -28,14 +41,14 @@ const Cv = (props) => {
            <h6 style={{marginBottom: '0.5rem', fontSize: '9px'}}>{email}</h6>
             <h6>{phone}</h6>
             </section>
-        <section className={!props.dataForm.jobs? "emptyJobs":"grid-area cvJobs"}>
+        <section className={classChecker('jobs', 'emptyJobs', 'grid-area cvJobs')}>
         <p className='compTitle'>Experience</p>
             {
                 props.dataForm?.jobs && props.dataForm.jobs.map(
                     job => <CvJobs key={job.id} jobs={job}/>)
             }
         </section>
-        <section className={!props.dataForm.education? "emptyStudies":"grid-area cvStudies"}>
+        <section className={classChecker('education', 'emptyStudies', 'grid-area cvStudies')}>
         <p className='compTitle'>Education</p>
             {
                 props.dataForm?.education && props.dataForm.education.map(

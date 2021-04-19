@@ -93,13 +93,6 @@ class Form extends Component {
     render() {
         const {jobs, education} = this.state
 
-        const addStyle = {
-            borderRadius: '3px', 
-            width: '40vw', 
-            backgroundColor:'rgb(171, 171, 230)', 
-            border: 'none', 
-            height: '2rem'
-        }
         const bluePrint = [
             {
                 id: '',
@@ -119,35 +112,54 @@ class Form extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                <div className='mainInfo'>
-                 <MainInfo info= {this.state} update={this.handleChange}/> 
+                 <MainInfo 
+                 info= {this.state} 
+                 update={this.handleChange}/> 
                </div>
                <div className="imgBtn">
-               <ImageUp getPic={this.getPic}/>
+               <ImageUp 
+               getPic={this.getPic}/>
                </div>
                <div className="jobs">
                  <label>{jobs.length === 1? 'Your Actual Job':'Your Jobs'}</label>
                  {
-                  jobs.map(job => <Work key={job.id} delete={(e) => this.cancelInfo(e, "jobs")} 
-                  info={job} onChange={(e) => this.updateState(e, job.id, "jobs")}/>)
+                  jobs.map(job => 
+                  <Work 
+                  key={job.id} 
+                  delete={(e) => this.cancelInfo(e, "jobs")} 
+                  info={job} 
+                  onChange={(e) => this.updateState(e, job.id, "jobs")}/>)
                  }
-                 <button style={addStyle} onClick={(e) => this.addInfo(e, "jobs", bluePrint[0])}>Add Job</button>
+                 <button className="addStyle" 
+                 onClick={(e) => this.addInfo(e, "jobs", bluePrint[0])}
+                 >Add Job</button>
                </div>
 
                <div className="education">
                <label>Your studies</label>
                {
-                  education.map(edu => <Study key={edu.id} delete={(e) => this.cancelInfo(e, "education")} 
-                  education={edu} onChange={(e) => this.updateState(e, edu.id, "education")}/>)
+                  education.map(edu => 
+                  <Study 
+                  key={edu.id} 
+                  delete={(e) => this.cancelInfo(e, "education")} 
+                  education={edu} 
+                  onChange={(e) => this.updateState(e, edu.id, "education")}/>)
                  }
-                 <button style={addStyle} onClick={(e) => this.addInfo(e, "education", bluePrint[1])}>Add Education</button>
+                 <button 
+                 className="addStyle" 
+                 onClick={(e) => this.addInfo(e, "education", bluePrint[1])}
+                 >Add Education</button>
 
                </div>
                <div className="interests">
 
                </div>
                <div className='textArea'>
-                   <textarea placeholder='Your interests' name='interests' 
-                   value={this.state.interests} onChange={this.handleChange}>
+                   <textarea 
+                   placeholder='Your interests' 
+                   name='interests' 
+                   value={this.state.interests} 
+                   onChange={this.handleChange}>
                    </textarea>
                </div>
 
@@ -157,94 +169,4 @@ class Form extends Component {
 }
 
 export default Form
-
-
-/*old
-               <button className="submit" type='submit'>Submit</button>
-
-    handleJob = (e, id) => {
-        e.preventDefault()
-        const elementsIndex = this.state.jobs.findIndex(job => job.id === id )
-        let newArray = [...this.state.jobs]
-        newArray[elementsIndex] = {...newArray[elementsIndex], [e.target.name]: e.target.value}
-        this.setState({
-            jobs: newArray,
-            }, () => this.props.getData(this.state));   
-    }
-
-    ///////////////////
-
-handleEdu = (e, id) => {
-    e.preventDefault()
-    const elementsIndex = this.state.education.findIndex(job => job.id === id )
-    let newArray = [...this.state.education]
-    newArray[elementsIndex] = {...newArray[elementsIndex], [e.target.name]: e.target.value}
-    this.setState({
-        education: newArray,
-        }, () => this.props.getData(this.state));   
-}
-
-
------
-
-    addJob = (e) => {
-        e.preventDefault()
-        let n;
-        if(this.state.jobs[this.state.jobs.length -1]){
-        n = (this.state.jobs[this.state.jobs.length -1].id) + 1}
-        else {n = 1}
-        this.setState({jobs: [...this.state.jobs, {
-            id: n ,
-            company: '',
-            year: '',
-            role: '',
-            city: ''
-        }
-    ]});
-    this.props.getData(this.state);
-    }
-
-
-    ///////
-
-
-addEdu = (e) => {
-    e.preventDefault()
-    let n;
-    if(this.state.education[this.state.education.length -1]){
-    n = (this.state.education[this.state.education.length -1].id) + 1}
-    else {n = 1}
-    this.setState({education: [...this.state.education, {
-        id: n,
-        title: '',
-        year: '',
-        subject: '',
-        school: ''
-    }
-]});
-this.props.getData(this.state);
-}
-
-    handleJobDelete = (e) => {
-        e.preventDefault()
-        const jobId = parseInt(e.target.name)
-        const final = this.state.jobs.filter(job => job.id !== jobId)
-        this.setState({
-            jobs: final,
-            }, () => this.props.getData(this.state)
-            );
-    }
-
-cancelEdu = (e) => {
-    e.preventDefault()
-    const eduId = parseInt(e.target.name)
-    const final = this.state.education.filter(study => study.id !== eduId)
-    this.setState({
-        education: final,
-        }, () => this.props.getData(this.state)
-        );
-}
-    */
-
-
 
