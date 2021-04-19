@@ -37,6 +37,7 @@ class Form extends Component {
         this.addInfo = this.addInfo.bind(this)
         this.updateState = this.updateState.bind(this)
         this.getPic = this.getPic.bind(this)
+        
     }
 
     handleChange = (e) => {
@@ -84,7 +85,6 @@ class Form extends Component {
 
     getPic = (childData) =>{
         this.setState({pic: childData})
-        console.log(this.state)
         if(this.state.pic !== ''){
             this.props.getData(this.state)
         }
