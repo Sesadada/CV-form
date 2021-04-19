@@ -82,6 +82,7 @@ input {
     "cvJobs cvMainInfo"
     "cvStudies cvInterests";
 }
+
 .wrapper {
   padding: 0rem 1rem;
   display: flex;
@@ -242,4 +243,45 @@ input {
   padding: 0;
   margin: 0cm;
   size: A4 portrait;
+}
+
+@media (max-width: 800px) {
+  section {
+    text-align: center;
+    margin: 1rem;
+  }
+  .container {
+    grid-template-areas:
+      "cvName"
+      "image"
+      "cvMainInfo"
+      "cvJobs"
+      "cvStudies"
+      "cvInterests";
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .picStyle {
+    border-radius: 50%;
+    background-color: pink;
+    width: 25%;
+    margin-left: 9rem;
+  }
+
+  .cvImg {
+    border-radius: 50%;
+  }
+
+  .emptyInfo {
+    background-color: rgb(245, 171, 171);
+    border-radius: 5px;
+    grid-area: cvMainInfo;
+    margin: 0rem 0 1rem 2rem;
+    padding: 1rem;
+    text-align: center;
+    width: 93%;
+  }
 }
